@@ -1,13 +1,12 @@
-
-.thumbnails{
+.thumbnails {
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-article{
-    background-color: white;
+article {
+    background-color: black;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -18,14 +17,30 @@ article{
 
 }
 
-article img {
-    width: 100%;
-    height: 30em;
-    -o-object-fit: cover;
-    object-fit: cover;
+article {
+    height: 500px;
+    overflow: hidden;
 }
 
-article h3{
+article img {
+    transition: transform .5s ease;
+}
+
+article:hover img {
+    transform: scale(1.5);
+
+}
+
+
+article img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit:cover;
+}
+
+
+article h3 {
     width: 100%;
     padding: 0px;
     margin-top: 0px;
@@ -38,22 +53,23 @@ article button {
     color: black;
     margin-left: auto;
     font-size: 30px;
-    position:absolute;
+    position: absolute;
 
 }
 
 
 
-body{
+body {
     margin: 0;
     background-color: black;
 
 
 }
 
-*{
+* {
     box-sizing: border-box
 }
+
 nav {
 
     background-color: black;
@@ -64,14 +80,16 @@ nav {
     padding: 0;
 
 }
+
 ul {
     display: flex;
     justify-content: space-between;
     width: 100%;
 
 }
-li:first-child{
-    margin-right:auto;
+
+li:first-child {
+    margin-right: auto;
 
 }
 
@@ -82,15 +100,17 @@ li a {
     text-decoration: none;
     color: white;
 }
-li{
+
+li {
     margin-right: 40px;
 }
 
 
 }
+
 li a:hover {
-  background-color: red;
-  color: white;
+    background-color: red;
+    color: white;
 
 }
 
@@ -98,41 +118,60 @@ h1 {
     font-family: 'Bangers', cursive;
     font-size: 3em;
     margin-bottom: auto;
-    color:white;
+    color: white;
 
 }
+
 h2 {
-        font-family: 'Bangers', cursive;
+    font-family: 'Bangers', cursive;
     font-size: 3em;
     margin-bottom: auto;
-    color:white;
+    color: white;
 }
+
 button i {
     color: white;
     text-shadow: 0 0 3px gray, 0 0 5px white;
 }
 
-button verras{
-    margin: 10px;
+#verras {
+    padding: 20px;
     background-color: white;
+    font-style: normal, black;
+    font-size: 30px;
+    text-shadow: 0 0 3px gray, 0 0 5px white;
+    box-shadow: 0 0 3px gray, 0 0 5px white;
+    margin-left: 1230px;
+}
+#verras:hover {
+    background-color: skyblue;
+    color: white;
+
 }
 
+/* Bron: w3schools, https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_spinners&stacked=h */
+
 .loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  position: absolute;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    position: absolute;
     margin-left: 650px;
     margin-top: 200px;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .hidden {
@@ -140,5 +179,36 @@ button verras{
 }
 
 .hover {
-    height:50em;
+    width: 600px;
+
+}
+
+#info {
+
+    float: right;
+    display: inline;
+    width: 75%;
+
+
+}
+
+#container {
+    margin-top: 80px;
+}
+
+#filmknop {
+    padding: 20px;
+    background-color: white;
+    font-style: normal, black;
+    font-size: 30px;
+    text-shadow: 0 0 3px gray, 0 0 5px white;
+    box-shadow: 0 0 3px gray, 0 0 5px white;
+    margin-left: 1230px;
+
+
+}
+
+p{
+    font-size: 26px;
+    color: white;
 }

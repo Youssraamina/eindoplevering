@@ -18,17 +18,19 @@ function getRandomInt(min, max) {
 } //https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
 
 var verrasmij = document.createElement('H1');// Maak een nieuwe html element <h1>
-document.body.appendChild(verrasmij); // Geeft een nieuwe kind aan de body en het kind is dus de h1 van hierboven
+//document.body.insertBefore(verrasmij, document.body.firstChild.nextSibling); // Geeft een nieuwe kind aan de body en het kind is dus de h1 van hierboven
 
 console.log(verrasmij); //Print de h1
-
+var main = document.getElementById("main");
 
 verrasbutton.forEach(function (button) {
     button.addEventListener('click', function () {
         verrasmij.innerHTML = genres[getRandomInt(0, 5)];//Zet de tekst van de <h1> verrasmij element, met een random genre
-        document.body.appendChild(verrasmij);//Zet de <h1> helemaal onderaan de body
     });//Luistert naar een click van de gebruiker
 });
+
+main.insertBefore(verrasmij, main.firstChild);//Zet de <h1> helemaal onderaan de body
+
 var i;//Deze variabel wordt gebruikt om te tellen bij de for loop
 var src = ["../images/ffilm.png", "../images/film1.png", "../images/film%202.png", "../images/film3.png", "../images/film4.png", "../images/film5.png"];//Deze array bestaat uit alle film thumbnails
 var movieNames = ["bright","mowgli", "polar","close","black history","braqueurs"];
@@ -48,21 +50,26 @@ function maakarticle(id) {
     button.setAttribute("name", "opslaan");//Hier zet je de name van de <button> element
     icoon.setAttribute("class", 'far fa-bookmark');//Hier zet je de class van de <i> element
 
-    article.setAttribute("name", movieNames[id]);
+    article.setAttribute("name", movieNames[id]);// hier zet je de naam van de films
 
     article.addEventListener('click', function () {
         localStorage.setItem("movieName", movieNames[id]);
            window.location.href = '../html/mijnlijst.html';
 
-    })
+    });
 
     article.addEventListener('mouseover', function () {
         article.classList.add('hover');
-    })
+    });
 
     article.addEventListener('mouseout', function () {
-        article.classList.remove('hover');
-    })
+        article.classList.remove('hover'); // hoover over thumbnails
+    });
+
+    if (id == 0){
+        //article.focus();
+        article.classList.add("hover");
+    }
 
     var section = document.getElementById('thumbnails1');//Hier pak je de trending section
     button.appendChild(icoon);//De <button> element krijgt hier een KIND. Het kind is de <i> element
@@ -89,6 +96,28 @@ opslaan.forEach(function (button) {
     });
 });
 
+document.addEventListener('keydown', (event) => {
+    var actieveArticle = document.querySelector ('.hover');
 
+    if (event.keyCode == 37) {
+        var vorigeArticle = actieveArticle.previousElementSibling;
+        console.log(vorigeArticle);
+        if (vorigeArticle) {
+            actieveArticle.classList.remove('hover');
+            vorigeArticle.classList.add('hover');
+
+        }
+    } else if (event.keyCode == 39){
+        var volgendeArticle = actieveArticle.nextElementSibling;
+        console.log(volgendeArticle);
+        if (volgendeArticle) {
+            actieveArticle.classList.remove('hover');
+            volgendeArticle.classList.add('hover');
+
+        }
+    }
+});
+
+//key ='c218514f'
 
 // Youssra Chait 500779482 - ffd 2019 video platform.

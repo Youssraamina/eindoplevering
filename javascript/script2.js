@@ -2,12 +2,13 @@
 /*eslint-env browser*/
 /*eslint 'no-console': 0*/
 var key = 'c218514f';
+//var key = 'test';
 var movieName = localStorage.getItem("movieName");
 console.log(movieName);
 
-const http = new XMLHttpRequest();
-const url = 'http://www.omdbapi.com/?apikey=' + key + '&t=' + movieName; // vanaf + comment voor 404
-http.open("GET", url);
+var http = new XMLHttpRequest();
+var url = 'http://www.omdbapi.com/?apikey=' + key + '&t=' + movieName; // vanaf + comment voor 404
+http.open("GET", url); //info krijgen
 http.send();
 http.onreadystatechange = (e) => {
     if (http.readyState === 4 && http.status === 200) {
@@ -20,17 +21,23 @@ http.onreadystatechange = (e) => {
 
             console.log(JSON.stringify(data));
             titel.innerHTML = data.Title;
-            year.innerHTML = data.Year;
-            actors.innerHTML = data.Actors;
+            year.innerHTML = "Release: " + data.Year;
+            actors.innerHTML = "Acteurs: " + data.Actors;
             poster.setAttribute("src", data.Poster);
 
             var loader = document.getElementById('loader');
             loader.classList.add('hidden');
+            var button = document.getElementById('filmknop');
+            button.classList.remove('hidden');
             console.log(loader);
         }, 3000
         )
     } else if(http.status === 404) {
         window.location.href = '../html/404.html';
+    } else if(http.status === 401) {
+        window.location.href = '../html/404.html';
     }
 }
 
+
+// bron:https://stackoverflow.com
