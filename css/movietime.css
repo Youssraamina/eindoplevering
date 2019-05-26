@@ -106,7 +106,6 @@ li {
 }
 
 
-}
 
 li a:hover {
     background-color: red;
@@ -211,4 +210,25 @@ button i {
 p{
     font-size: 26px;
     color: white;
+}
+
+h3 {
+    font-size: 26px;
+    color: white;
+    margin-left: 550px;
+
+}
+#404 {
+   display:flex;
+    justify-content: center;
+}
+h4 {
+    color: white;
+}
+#herlaad {
+    background-color: mediumpurple;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+
 }

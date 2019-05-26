@@ -96,22 +96,22 @@ opslaan.forEach(function (button) {
     });
 });
 
-document.addEventListener('keydown', (event) => {
-    var actieveArticle = document.querySelector ('.hover');
+document.addEventListener('keydown', (event) => { // geeft event aan hele html door te luisteren naar toetsenbord
+    var actieveArticle = document.querySelector ('.hover'); //pak de article die actief is met class hover
 
-    if (event.keyCode == 37) {
-        var vorigeArticle = actieveArticle.previousElementSibling;
-        console.log(vorigeArticle);
-        if (vorigeArticle) {
-            actieveArticle.classList.remove('hover');
+    if (event.keyCode == 37) { //keycode 37 is linker pijl op toetsenbord
+        var vorigeArticle = actieveArticle.previousElementSibling; //pak de linker article van de actieve article
+        console.log(vorigeArticle); //print
+        if (vorigeArticle) { //als vorige article bestaat geef dan de hover class aan vorige article
+            actieveArticle.classList.remove('hover'); //haal hover weg van actieve article zodat er maar 1 hover heeft
             vorigeArticle.classList.add('hover');
 
         }
-    } else if (event.keyCode == 39){
-        var volgendeArticle = actieveArticle.nextElementSibling;
-        console.log(volgendeArticle);
-        if (volgendeArticle) {
-            actieveArticle.classList.remove('hover');
+    } else if (event.keyCode == 39){ //keycode 39 is rechter pijl op toetsenbord
+        var volgendeArticle = actieveArticle.nextElementSibling; //pak de rechter article van de actieve article
+        console.log(volgendeArticle); //print
+        if (volgendeArticle) { //als volgende article bestaat geef dan de hover class aan volgende article
+            actieveArticle.classList.remove('hover'); //haal hover weg van actieve article
             volgendeArticle.classList.add('hover');
 
         }

@@ -17,3 +17,12 @@ Bevindingen:
 -    Sectie hover aanpassen, vergroten naar breedte i.p.v. hoogte
 -    Toetsenboord door selectie heen scrollen
 -    Buttons zelfde styling als bookmark knoppen
+
+Test versie 3:
+Testpersoon: Berat Zekaj CMD
+
+Bevindingen:
+- Visuele hierarchie mist in je 404 pagina
+- De elemeten hebben allemaal dezelfde zwaarte
+- Bekijk het in losse delen en stappen
+- Je laad balk geeft geen indicator van wat er gaat komen
